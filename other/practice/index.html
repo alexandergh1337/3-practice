@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .hover:hover {
+            text-decoration: underline;
+        }
+
+        .block {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .block {
+                margin: -100px auto 30px;
+                position: relative;
+            }
+
+            .star-decoration {
+                right: 65px;
+                top: 95px;
+            }
+
+            .circle-decoration {
+                left: 45px;
+                top: -30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .block {
+                position: absolute;
+                left: calc(50% - 275px);
+                top: 70%;
+                transform: translateY(-50%);
+            }
+
+            .star-decoration {
+                right: 35px;
+                top: 80px;
+            }
+
+            .circle-decoration {
+                left: 35px;
+                top: -30px;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .svg-bg-left {
+            position: absolute;
+            bottom: -50px;
+            left: -30px;
+            z-index: 1;
+            width: 40%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .svg-bg-right {
+            position: absolute;
+            bottom: -50px;
+            right: -30px;
+            z-index: 1;
+            width: 40%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .svg-bg-top-right {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            z-index: 1;
+            height: auto;
+        }
+
+        .main-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-hover {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .card-hover:hover {
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+        }
+
+        .star-decoration {
+            position: absolute;
+            z-index: 5;
+            height: auto;
+        }
+
+        .circle-decoration {
+            position: absolute;
+            z-index: 5;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <article
+        style="background-color: #101C26; background-image: url('img/BAground.svg'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+        <nav class="navbar navbar-expand-lg">
+            <section class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo 1.svg" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <article class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto gap-4">
+                        <li class="nav-item active">
+                            <a class="nav-link text-white hover" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover" href="#">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover" href="#">Contact</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-lg-none mt-3">
+                            <a class="btn btn-outline-light px-4 py-2 rounded-pill me-2" href="#">Sign in</a>
+                        </li>
+                        <li class="nav-item d-lg-none mt-3">
+                            <a class="btn px-4 py-2 rounded-pill" style="background-color: #F0E714;" href="#">Sign
+                                up</a>
+                        </li>
+
+
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="btn btn-outline-light px-4 py-2 rounded-pill me-2" href="#">Sign in</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="btn px-4 py-2 rounded-pill" style="background-color: #F0E714;" href="#">Sign
+                                up</a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </nav>
+
+        <article class="container py-5">
+            <article class="row align-items-center">
+                <article class="col-lg-6 position-relative">
+                    <img src="img/Star 11.svg" class="star-decoration" alt="star">
+                    <h1 class="display-5 fw-bold text-white">
+                        We’re a Creative<br>Design Agency
+                    </h1>
+                    <p class="my-5 fs-5 text-white">
+                        We are delivering top level digital services<br>
+                        best experienced team, just get started
+                    </p>
+
+                    <article class="d-flex align-items-center mb-4">
+                        <a class="btn me-3 rounded-pill px-4 py-3" style="background-color: #F0E714;" href="#">
+                            Get Started
+                            <img class="ms-2" src="img/Vector.svg" alt="">
+                        </a>
+                        <article class="d-flex align-items-center">
+                            <img class="me-2" src="img/Frame 38469.svg" style="height: 30px; width: 30px;" alt="">
+                            <p class="text-white m-0">How it works</p>
+                        </article>
+
+                    </article>
+
+                    <article class="d-flex mt-5">
+                        <article class="me-5 text-center">
+                            <h3 class="fw-bold display-5" style="color: #F0E714;">20+</h3>
+                            <small class="fs-5 text-white">Years of Excellent</small>
+                        </article>
+                        <article class="me-5 text-center">
+                            <h3 class="fw-bold display-5" style="color: #F0E714;">90%</h3>
+                            <small class="fs-5 text-white">Happy Client</small>
+                        </article>
+                        <article class="me-5 text-center">
+                            <h3 class="fw-bold display-5" style="color: #F0E714;">80%</h3>
+                            <small class="fs-5 text-white">Project Succes</small>
+                        </article>
+                    </article>
+                </article>
+
+                <article class="col-lg-6 text-center mt-5 mt-lg-0 position-relative">
+                    <img src="img/Ellipse 14.svg" class="circle-decoration" alt="circle">
+                    <img src="img/Mask group(2).svg" class="svg-bg-top-right" alt="">
+                    <img src="img/Rectangle 6.png" class="img-fluid main-image" alt="">
+                    <article class="block rounded d-flex justify-content-center align-items-center d-lg-flex">
+                        <img style="height: 175px; width: 165px;" src="img/Frame 38434.png" alt="">
+                    </article>
+                </article>
+            </article>
+
+            <article class="d-flex justify-content-center align-items-center flex-wrap gap-5 mt-5">
+                <img src="img/Frame 10.svg" alt="">
+                <img src="img/Dropbox_logo_2017 1.svg" alt="">
+                <img src="img/Frame 38577.svg" alt="">
+                <img src="img/Layer_2.svg" alt="">
+                <img src="img/Layer_2.svg" alt="">
+                <img src="img/Group.svg" alt="">
+            </article>
+
+        </article>
+    </article>
+
+    <section class="p-5" style="background-color: #E5E5E5;">
+        <article class="container">
+            <article class="row mt-5">
+                <article class="col-lg-6">
+                    <article class="image-container">
+                        <img src="img/Mask group.svg" class="svg-bg-left" alt="">
+                        <img src="img/Rectangle 11.png" class="img-fluid mt-4 main-image" alt="">
+                    </article>
+                </article>
+                <article class="col-lg-6">
+                    <p class="btn fs-5 mt-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        ABOUT US
+                    </p>
+                    <h2 class="display-5 fw-bold mb-4">We are skilled in providing superior services</h2>
+                    <p class="fs-4 mb-4 text-secondary">Customer satisfaction is such a key part of many successful
+                        businesses. Most companies have</p>
+                    <a class="btn btn-dark px-5 py-3 rounded-pill mt-4" href="#">
+                        <span style="color: #F0E714;">Read More</span>
+                        <img class="ms-2" src="img/Vector(3).svg" alt="">
+                    </a>
+                </article>
+
+            </article>
+
+            <article class="row mt-5 pt-5">
+                <article class="col-lg-6">
+                    <p class="btn fs-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        WHY CHOOSE US
+                    </p>
+                    <h2 class="display-5 fw-bold mb-4">Expert advising clients
+                        On financial challenges</h2>
+                    <p class="fs-4 mb-4 text-secondary">Customer satisfaction is such a key part of many successful
+                        businesses. Most companies ,..</p>
+
+                    <article class="mt-5 d-flex align-items-center">
+                        <img src="img/Frame 140.svg" class="me-3" alt="">
+                        <article class="">
+                            <h3 class="fw-bold">Frist working process</h3>
+                            <p class="fs-5 text-secondary">Customer satisfaction is such a key <br> part of many
+                                successful businesses.</p>
+                        </article>
+                    </article>
+                    <article class="mt-3 d-flex align-items-center">
+                        <img src="img/Frame 141.svg" class="me-3" alt="">
+                        <article class="">
+                            <h3 class="fw-bold">Dedicated Team</h3>
+                            <p class="fs-5 text-secondary">business model that refers to an agreement <br> between the
+                                client
+                                and service provider, </p>
+                        </article>
+                    </article>
+                    <article class="mt-3 d-flex align-items-center">
+                        <img src="img/Frame 142.svg" class="me-3" alt="">
+                        <article class="">
+                            <h3 class="fw-bold">24/7 Hours Support</h3>
+                            <p class="fs-5 text-secondary">Scaling your team to provide assistance <br> around the clock
+                                might sound like a </p>
+                        </article>
+                    </article>
+                </article>
+
+                <article class="col-lg-6 mt-5 mt-lg-0">
+                    <article class="image-container">
+                        <img src="img/Mask group(1).svg" class="svg-bg-right" alt="">
+                        <img src="img/Rectangle 10.png" class="img-fluid main-image" alt="">
+                    </article>
+                </article>
+            </article>
+        </article>
+    </section>
+
+    <section class="p-5" style="background-color: #E5E5E5;">
+        <article class="container">
+            <article class="row mt-5">
+                <article class="col-lg-12 text-center">
+                    <p class="btn fs-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        OUR SEARVICES
+                    </p>
+                    <h1 class="display-5 fw-bold mt-3 mb-3">What Creative Design <br> We Offer</h1>
+                    <p class="fs-4 text-secondary">
+                        Business owners and managers lead by example. The values and <br> work ethic displayed by a
+                        company's
+                        decision makers have a direct <br> ...
+                    </p>
+                </article>
+            </article>
+
+            <article class="row mt-5 g-4">
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38498.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Product Management</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38498(1).svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Web & Mobile
+                            Development</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38512.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Brochures & Flyers</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38498(2).svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Logo & name cards</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38508.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Marketing &
+                            Commuication</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38509.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Business
+                            Development</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38510.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Human
+                            Resources</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <article class="card p-4 card-hover">
+                        <img src="img/Frame 38511.svg" class="mb-3" style="width: 54px; height: 54px;" alt="">
+                        <h2 class="fw-bold mb-3">Infographics & Illustrations</h2>
+                        <p class="fs-5 text-secondary">vacancy available 20</p>
+                    </article>
+                </article>
+            </article>
+
+
+        </article>
+    </section>
+
+    <section class="p-5" style="background-color: #E5E5E5;">
+        <article class="container">
+            <article class="row mt-5">
+                <article class="col-lg-6">
+                    <p class="btn fs-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        READY TO USE
+                    </p>
+                    <h2 class="display-5 fw-bold mb-4">Elegant And Impressive Inner Pages</h2>
+                </article>
+                <article class="col-lg-6 d-flex align-items-center justify-content-end mt-5">
+                    <img src="img/arrow-right-circle.svg" alt="Arrow Right Circle" class="me-2">
+                    <img src="img/arrow-right-circle(1).svg" alt="Arrow Right Circle 1">
+                </article>
+            </article>
+        </article>
+
+        <article class="container">
+            <article class="row mt-5 gy-4">
+                <article class="col-12 col-sm-6 col-lg-4">
+                    <article class="px-1">
+                        <img src="img/Hotel boking.png" class="img-fluid mb-3" alt="">
+                        <h2 class="mb-3">Hotel Booking Website</h2>
+                        <p class="text-secondary">Business owners and managers lead by example. The values and work
+                            ethic displayed by a</p>
+                        <a class="mt-4" style="text-decoration: none; color: #24272E;" href="#">
+                            <span class="fw-bold">Read Case Study</span>
+                            <img class="ms-2" src="img/Vector(2).svg" alt="">
+                        </a>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-4">
+                    <article class="px-1">
+                        <img src="img/অ্যাপ.png" class="img-fluid mb-3" alt="">
+                        <h2 class="mb-3">UI/UX App Design</h2>
+                        <p class="text-secondary">Business owners and managers lead by The values and work ethic
+                            displayed by a company's </p>
+                        <a class="mt-4" style="text-decoration: none; color: #24272E;" href="#">
+                            <span class="fw-bold">Read Case Study</span>
+                            <img class="ms-2" src="img/Vector(2).svg" alt="">
+                        </a>
+                    </article>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-4">
+                    <article class="px-1">
+                        <img src="img/Hotel boking(1).png" class="img-fluid mb-3" alt="">
+                        <h2 class="mb-3">Ceramic E-commerce Landing Page</h2>
+                        <p class="text-secondary">Business owners and managers lead by example. The values and work
+                            ethic displayed by a company's </p>
+                        <a class="mt-4" style="text-decoration: none; color: #24272E;" href="#">
+                            <span class="fw-bold">Read Case Study</span>
+                            <img class="ms-2" src="img/Vector(2).svg" alt="">
+                        </a>
+                    </article>
+                </article>
+            </article>
+        </article>
+    </section>
+
+    <section class="p-5" style="background-color: #E5E5E5;">
+        <article class="container mb-5">
+            <article class="row mt-5">
+                <article class="col-lg-12 text-center">
+                    <p class="btn fs-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        TESTIMONIAL
+                    </p>
+                    <h1 class="display-5 fw-bold mt-3 mb-3">Client’s kind Words</h1>
+                    <p class="fs-4 text-secondary">
+                        Business owners and managers lead by example. The values
+                    </p>
+                </article>
+            </article>
+
+            <article class="row justify-content-center mt-5">
+                <article class="col-md-4 mb-4">
+                    <article class="card p-4 shadow-sm h-100">
+                        <article class="text-center">
+                            <img src="img/Ellipse 378.png" class="rounded-circle mb-2" width="60" height="60"
+                                alt="Avatar">
+                            <h5 class="mb-2">Brooklyn Simmons</h5>
+                            <p class="text-muted mb-1 small">Co-Founder and CEO, Snapdeal</p>
+                            <article class="mb-3" style="color: #F37825;">
+                                ★★★★★
+                            </article>
+                        </article>
+                        <p class="text-secondary small text-center">
+                            <img src="img/inverted-commas (1) 1 (Traced).svg" alt="Opening Quote" class="me-2">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua
+                            dolor do amet sint. Velit officia cons
+                            <img src="img/inverted-commas (1) 1 (Traced)(1).svg" alt="Closing Quote" class="ms-2">
+                        </p>
+                    </article>
+                </article>
+
+                <article class="col-md-4 mb-4">
+                    <article class="card p-4 shadow h-100 border-0" style="transform: scale(1.05);">
+                        <article class="text-center">
+                            <img src="img/Ellipse 378(1).png" class="rounded-circle mb-2" width="70" height="70"
+                                alt="Avatar">
+                            <h5 class="mb-2">Brooklyn Simmons</h5>
+                            <p class="text-muted mb-1 small">Co-Founder & Chief Executive Officer</p>
+                            <article class="mb-3" style="color: #F37825;">
+                                ★★★★★
+                            </article>
+                        </article>
+                        <p class="text-secondary small text-center">
+                            <img src="img/inverted-commas (1) 1 (Traced).svg" alt="Opening Quote" class="me-2">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua
+                            dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                            <img src="img/inverted-commas (1) 1 (Traced)(1).svg" alt="Closing Quote" class="ms-2">
+                        </p>
+                    </article>
+                </article>
+
+                <article class="col-md-4 mb-4">
+                    <article class="card p-4 shadow-sm h-100">
+                        <article class="text-center">
+                            <img src="img/Ellipse 378(2).png" class="rounded-circle mb-2" width="60" height="60"
+                                alt="Avatar">
+                            <h5 class="mb-2">Jacob Jones</h5>
+                            <p class="text-muted mb-1 small">Marketing Coordinator</p>
+                            <article class="mb-3" style="color: #F37825;">
+                                ★★★★★
+                            </article>
+                        </article>
+                        <p class="text-secondary small text-center">
+                            <img src="img/inverted-commas (1) 1 (Traced).svg" alt="Opening Quote" class="me-2">
+                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+                            consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua
+                            dolor do amet sint. Velit officia cons
+                            <img src="img/inverted-commas (1) 1 (Traced)(1).svg" alt="Closing Quote" class="ms-2">
+                        </p>
+                    </article>
+                </article>
+
+                <article class="col-lg-12 text-center mt-5">
+                    <img src="img/Ellipse 379.svg" alt="" class="me-2">
+                    <img src="img/Ellipse 379.svg" alt="" class="me-2">
+                    <img src="img/Ellipse 381.svg" alt="" class="me-2">
+                    <img src="img/Ellipse 379.svg" alt="">
+                </article>
+            </article>
+        </article>
+    </section>
+
+    <section class="p-5" style="background-color: #ffffff;">
+        <article class="container mb-5">
+            <article class="row mt-5 pt-3">
+                <article class="col-lg-6">
+                    <p class="btn fs-5 rounded-pill" style="background-color: rgba(240, 231, 20, 0.2);">
+                        OUR CONTACTS
+                    </p>
+                    <h2 class="display-5 fw-bold mb-4">Let’s Start Working Together. Get in Touch with Us!</h2>
+                    <p class="fs-4 mb-4 text-secondary">Get in touch to discuss your employee wellbeing needs today.
+                        Please give us a call, drop us an email.</p>
+
+                    <article class="mt-5 d-flex align-items-center">
+                        <img src="img/ci_location.svg" class="me-3 mb-3" alt="">
+                        <p class="fs-5 text-secondary">41 Pilgrm Avenue, Chevy Chase, Md 20815</p>
+                    </article>
+                    <article class="mt-3 d-flex align-items-center">
+                        <img src="img/Vector(4).svg" class="me-3 mb-3" alt="">
+                        <p class="fs-5 text-secondary">+01234 567 890</p>
+                    </article>
+                    <article class="mt-3 d-flex align-items-center">
+                        <img src="img/ic_baseline-email.svg" class="me-3 mb-3" alt="">
+                        <p class="fs-5 text-secondary">info@agency.com</p>
+                    </article>
+                </article>
+
+                <article class="col-lg-6 rounded p-5" style="background-color: #101C26;">
+                    <form>
+                        <article class="mb-4">
+                            <label for="name" class="form-label text-white">Your Name</label>
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="name">
+                        </article>
+                        <article class="mb-4">
+                            <label for="email" class="form-label text-white">Your Email</label>
+                            <input type="email" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="email">
+                        </article>
+                        <article class="mb-4">
+                            <label for="website" class="form-label text-white">Website</label>
+                            <input type="text" class="form-control bg-transparent border-0 border-bottom text-white"
+                                id="website">
+                        </article>
+                        <article class="mb-4">
+                            <label for="project" class="form-label text-white">Talk About Your Project</label>
+                            <textarea class="form-control bg-transparent border-0 border-bottom text-white" id="project"
+                                rows="3"></textarea>
+                        </article>
+                        <button type="submit" class="btn px-5 py-2 rounded-pill mt-4"
+                            style="background-color: #F0E714;">Submit</button>
+                    </form>
+                </article>
+            </article>
+        </article>
+    </section>
+
+    <footer class="p-5" style="background-color: #101C26;">
+        <article class="container">
+            <article class="row">
+                <article class="col-lg-4 mb-4">
+                    <img src="img/logo 1(1).svg" alt="Logo" class="mb-3">
+                    <p class="" style="color: #F5F5F5;">Amet minim mollit non deserunt ullamco <br> est sit aliqua
+                        dolordo amet sint.
+                        Velit <br> officia consequat duis enim velit mollit.</p>
+                    <article class="d-flex gap-3">
+                        <img src="img/Group 1093.svg" alt="Icon 1">
+                        <img src="img/Group 1094.svg" alt="Icon 2">
+                        <img src="img/Group 1095.svg" alt="Icon 3">
+                    </article>
+                </article>
+
+                <article class="col-lg-2 mb-4">
+                    <h5 class="text-white mb-3">Useful Link</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Home</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Company News</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">About us</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Projects</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Careers</a></li>
+                    </ul>
+                </article>
+
+                <article class="col-lg-2 mb-4">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Website Design</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Logo and Branding</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Mobile App</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Search Engine</a></li>
+                    </ul>
+                </article>
+
+                <article class="col-lg-2 mb-4">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Carees</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Contact</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">FAQ</a></li>
+                        <li><a href="#" class="text-decoration-none" style="color: #B3B3B3;">Partners</a></li>
+                    </ul>
+                </article>
+
+                <article class="col-lg-2 mb-4">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <article class="d-flex align-items-center mb-3">
+                        <img src="img/ci_location(1).svg" alt="Location Icon" class="me-3">
+                        <p class="mb-0" style="color: #B3B3B3;">41 Pilgrm Avenue, Chevy Chase, Md 20815</p>
+                    </article>
+                    <article class="d-flex align-items-center mb-3">
+                        <img src="img/Frame 183.svg" alt="Phone Icon" class="me-3">
+                        <p class="mb-0" style="color: #B3B3B3;">+01234 567 890</p>
+                    </article>
+                    <article class="d-flex align-items-center">
+                        <img src="img/ic_baseline-email(1).svg" alt="Email Icon" class="me-3">
+                        <p class="mb-0" style="color: #B3B3B3;">info@agency.com</p>
+                    </article>
+                </article>
+            </article>
+
+            <hr style="border-color: #989898;">
+
+        </article>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
