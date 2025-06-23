@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Single</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .hover {
+            text-decoration: none;
+        }
+
+        .hover:hover {
+            text-decoration: underline;
+        }
+
+        .border-end {
+            position: relative;
+        }
+
+        .card-shadow {
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+        }
+
+        .border-end::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 10px;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(222, 226, 230, 0.3), rgba(222, 226, 230, 1));
+        }
+
+        .border-end::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(222, 226, 230, 0.3), rgba(222, 226, 230, 1));
+        }
+
+        .quote-block {
+            position: relative;
+            min-height: 250px;
+            aspect-ratio: 16/9;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .quote-block>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quote-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+        }
+
+        @media (max-width: 576px) {
+            .quote-block {
+                min-height: 150px;
+                aspect-ratio: 4/3;
+            }
+
+            .quote-content {
+                font-size: 12px;
+
+            }
+
+            .quote-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <section class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/Logo.svg" alt="">
+                <span class="ms-2" style="font-weight: 700; font-size: 40px;">PrimeCRM</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <article class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                <ul class="navbar-nav gap-4 me-4 fw-medium">
+                    <li class="nav-item active">
+                        <a class="nav-link hover" style="color: #303030;" href="#">Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" style="color: #303030;" href="#">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" style="color: #303030;" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" style="color: #303030;" href="#">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hover" style="color: #303030;" href="#">Pricing</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item d-lg-none mt-3">
+                        <a class="btn px-4 py-2 rounded text-white" style="background-color: #303030; font-weight: 600;"
+                            href="#">Login</a>
+                    </li>
+
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="btn px-4 py-2 rounded text-white" style="background-color: #303030; font-weight: 600;"
+                            href="#">Login</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </nav>
+
+    <section class="p-5"
+        style="background: url('img/Background (3).svg') no-repeat; background-size: auto; background-position: top 200px right;">
+        <article class="container">
+            <article class="row mt-5">
+
+                <article class="col-lg-8 order-2 order-lg-1">
+                    <article class="mb-5">
+                        <img src="img/Image(7).png" class="mb-3" style="width: 100%; height: auto;" alt="...">
+                        <article class="d-flex align-items-center mb-3 fs-4 flex-wrap">
+                            <article class="d-flex align-items-center me-4">
+                                <img src="img/Combined-Shape(1).svg" class="me-2" alt="">
+                                <span class="text-secondary">Admin</span>
+                            </article>
+
+                            <article class="d-flex align-items-center">
+                                <img src="img/Combined-Shape(2).svg" class="me-2" alt="">
+                                <span class="text-secondary">No Comments</span>
+                            </article>
+                        </article>
+                        <h5 class="fw-bold display-5">To convert them into leads and customers</h5>
+                        <p class="fs-4 text-secondary">Uniquely Matrix Economically Sound Value Through Cooperative
+                            Technology. Competently Parallel Task Fully Researched Data And Enterprise Process
+                            Improvements. Collaboratively Expedite Quality Manufactured Products Via Client-Focused
+                            Results Quickly Communicate Enabled Technology And Turnkey Leadership Skills. Uniquely
+                            Enable Accurate Supply Chains Rather Than Friction Technology.</p>
+                        <h5 class="fw-bold display-5">The Digital Service For All</h5>
+                        <p class="fs-4 text-secondary mb-3">Appropriately Empower Dynamic Leadership Skills After
+                            Business
+                            Portals. Globally My Carminate Interactive Supply Chains With Distinctive Quality Vectors
+                            Global Sources Services. Uniquely Matrix Economically Sound Value Through Cooperative
+                            Technology. Competently Parallel Task Fully Researched Data And Enterprise Process
+                            Improvements.</p>
+
+                        <ul>
+                            <li class="fs-4 text-secondary mb-2">Listen to what they say about you</li>
+                            <li class="fs-4 text-secondary mb-2">Randomised words which.</li>
+                            <li class="fs-4 text-secondary mb-2">Internet tend to repeat predefined chunks</li>
+                            <li class="fs-4 text-secondary mb-2">Quickly Communicate Enabled Technology And Turnkey
+                                Leadership Skills.</li>
+                            <li class="fs-4 text-secondary mb-2">Uniquely Enable Accurate Supply Chains Rather Than
+                                Friction Technology.</li>
+                        </ul>
+
+                        <article class="quote-block mb-5 rounded-4">
+                            <img src="img/Background (6).svg" alt="...">
+                            <article class="quote-content">
+                                <img src="img/Pattern (4).svg" class="quote-icon" alt="icon">
+                                <article class="fw-bold fst-italic w-100">
+                                    “For the longest time, computers have been associated with work. Mainframes were for
+                                    the Army, government agencies, and then large companies. Workstations were for
+                                    engineers and software programmers. PCs were initially for other white-collar jobs.”
+                                </article>
+                            </article>
+                        </article>
+
+                        <p class="fs-4 text-secondary mb-3">Make real time a work improvements</p>
+                        <p class="fs-4 text-secondary mb-5">Collaboratively Administrate Empowered Markets Via
+                            Plug-And-Play Networks. Dynamically Procrastinate B2C Users After Installed Base Benefits.
+                            Dramatically Visualize Customer Directed Convergence Without Revolutionary ROI.</p>
+
+                        <ol>
+                            <li class="fs-4 text-secondary mb-3">It brings the right people together with all the right
+                                information and tools to get work done</li>
+                            <li class="fs-4 text-secondary mb-3">We provide operational efficiency, data security, and
+                                flexible scale</li>
+                            <li class="fs-4 text-secondary mb-3">Your best work, together in one package that works
+                                seamlessly from your computer</li>
+                            <li class="fs-4 text-secondary mb-3">Delivers the tools you need to save time Improve field
+                                performance always</li>
+                        </ol>
+                    </article>
+                    <article class="mb-3" style="width: 100%; height: 1px; background: #f4f2f0;"></article>
+                    <article class="d-flex justify-content-between align-items-center">
+                        <p style="font-size: 30px;">Share</p>
+                        <article class="d-flex flex-row align-items-center gap-5">
+                            <a class="" href="#">
+                                <img src="img/444.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/111.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/222.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/333.svg" alt="">
+                            </a>
+                        </article>
+                    </article>
+                    <article class="mb-3" style="width: 100%; height: 1px; background: #f4f2f0;"></article>
+
+                    <article class="d-flex flex-column">
+                        <h5 class="fw-bold display-5 mb-4 mt-4">Leave A Comments</h5>
+                        <form>
+                            <article class="row g-3">
+                                <article class="col-lg-6 col-md-6 col-sm-12">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control rounded-4 p-4" id="name"
+                                        placeholder="john david">
+                                </article>
+                                <article class="col-lg-6 col-md-6 col-sm-12">
+                                    <label for="email" class="form-label">Your Email *</label>
+                                    <input type="email" class="form-control rounded-4 p-4" id="email"
+                                        placeholder="example@youremail.com">
+                                </article>
+                            </article>
+                            <article class="mb-3 mt-3">
+                                <label for="website" class="form-label">Website *</label>
+                                <input type="text" class="form-control rounded-4 p-4" id="website"
+                                    placeholder="your website address here">
+                            </article>
+                            <article class="mb-4">
+                                <label for="comment" class="form-label">Message *</label>
+                                <textarea class="form-control rounded-4 p-4" id="comment" rows="9"
+                                    placeholder="hello there,i would like to talk about how to..."></textarea>
+                            </article>
+                            <article class="form-check mb-3 mt-3">
+                                <input class="form-check-input" style="border-color: #29a0f5;" type="checkbox" value=""
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    save my name, email, and website in this browser for the next time i comment.
+                                </label>
+                            </article>
+                            <a href="#" class="btn text-white px-4 py-3 fw-bold mt-3 mb-5"
+                                style="background-color: #303030;">Post Comment</a>
+                        </form>
+
+
+                    </article>
+                </article>
+
+                <article class="col-lg-4 order-1 order-lg-2">
+                    <article class="card card-shadow border-0 rounded-5 mb-5">
+                        <article class="card-body p-4">
+                            <article class="position-relative">
+                                <input type="text" class="form-control rounded-4 p-4 fs-4 border-0 pe-5"
+                                    style="color: #4e4e4e; background-color: #eaeaea;" placeholder="Search...">
+                                <span class="position-absolute top-50 end-0 translate-middle-y me-4"
+                                    style="pointer-events: none;">
+                                    <img src="img/Vector(1) (2).svg" alt="">
+                                </span>
+                            </article>
+                        </article>
+                    </article>
+
+
+                    <article class="card card-shadow border-0 rounded-5 mb-5">
+                        <article class="card-body p-4">
+                            <h5 class="card-title fw-bold display-5 mb-3">Recent Post</h5>
+                            <article class="d-flex align-items-center mb-3">
+                                <img src="img/Mask group.png" class="me-2" style="width: 70%; height: auto;" alt="">
+                                <article class="d-flex flex-column">
+                                    <h6 class="card-title fw-bold" style="font-size: 20px;">Tax experts under
+                                        income-tax
+                                        lens for valuation</h6>
+                                    <article class="d-flex align-items-center flex-wrap" style="font-size: 18px;">
+                                        <article class="d-flex align-items-center me-3">
+                                            <span class="text-secondary">May 02, 2022</span>
+                                        </article>
+
+                                        <article class="d-flex align-items-center me-3">
+                                            <img src="img/Ellipse 2.svg" class="" alt="">
+                                        </article>
+
+                                        <article class="d-flex align-items-center">
+                                            <span class="text-secondary">3 min read</span>
+                                        </article>
+                                    </article>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; background: #DEDEDE;"></article>
+
+
+                            <article class="d-flex align-items-center mb-3">
+                                <img src="img/Mask group(1).png" class="me-2" style="width: 70%; height: auto;" alt="">
+                                <article class="d-flex flex-column">
+                                    <h6 class="card-title fw-bold" style="font-size: 20px;">Entrepreneurs Having The
+                                        Necessary Skill Sets</h6>
+                                    <article class="d-flex align-items-center flex-wrap" style="font-size: 18px;">
+                                        <article class="d-flex align-items-center me-3">
+                                            <span class="text-secondary">May 02, 2022</span>
+                                        </article>
+
+                                        <article class="d-flex align-items-center me-3">
+                                            <img src="img/Ellipse 2.svg" class="" alt="">
+                                        </article>
+
+                                        <article class="d-flex align-items-center">
+                                            <span class="text-secondary">3 min read</span>
+                                        </article>
+                                    </article>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; background: #DEDEDE;"></article>
+
+                            <article class="d-flex align-items-center mb-3">
+                                <img src="img/Mask group(2).png" class="me-2" style="width: 70%; height: auto;" alt="">
+                                <article class="d-flex flex-column">
+                                    <h6 class="card-title fw-bold" style="font-size: 20px;">How to Choose A Tech
+                                        Stack
+                                        for Your Startup</h6>
+                                    <article class="d-flex align-items-center flex-wrap" style="font-size: 18px;">
+                                        <article class="d-flex align-items-center me-3">
+                                            <span class="text-secondary">May 02, 2022</span>
+                                        </article>
+
+                                        <article class="d-flex align-items-center me-3">
+                                            <img src="img/Ellipse 2.svg" class="" alt="">
+                                        </article>
+
+                                        <article class="d-flex align-items-center">
+                                            <span class="text-secondary">3 min read</span>
+                                        </article>
+                                    </article>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; background: #DEDEDE;"></article>
+                        </article>
+                    </article>
+
+                    <article class="card card-shadow border-0 rounded-5 mb-5">
+                        <article class="card-body p-4">
+                            <h5 class="card-title fw-bold display-5 mb-3">Categories</h5>
+                            <article class="d-flex align-items-center mb-2">
+                                <article class="d-flex justify-content-between w-100">
+                                    <h6 class="fs-4">ALL</h6>
+                                    <p style="font-size: 18px;">(7)</p>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; border: 1px dashed #d9d9d9">
+                            </article>
+
+                            <article class="d-flex align-items-center mb-2">
+                                <article class="d-flex justify-content-between w-100">
+                                    <h6 class="fs-4">TECHNOLOGY</h6>
+                                    <p style="font-size: 18px;">(3)</p>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; border: 1px dashed #d9d9d9">
+                            </article>
+
+                            <article class="d-flex align-items-center mb-2">
+                                <article class="d-flex justify-content-between w-100">
+                                    <h6 class="fs-4">BUSINESS</h6>
+                                    <p style="font-size: 18px;">(1)</p>
+                                </article>
+                            </article>
+                            <article class="mb-3" style="width: 100%; height: 1px; border: 1px dashed #d9d9d9">
+                            </article>
+
+                            <article class="d-flex align-items-center mb-2">
+                                <article class="d-flex justify-content-between w-100">
+                                    <h6 class="fs-4">MARKETING</h6>
+                                    <p style="font-size: 18px;">(2)</p>
+                                </article>
+                            </article>
+
+                        </article>
+                    </article>
+
+                </article>
+    </section>
+
+    <footer class="text-white p-5 pb-0" style="background-color: #303030;">
+        <article class="container">
+            <article class="row">
+                <article class="col-lg-12">
+                    <article class="d-flex justify-content-between align-items-center flex-wrap">
+                        <a class="navbar-brand d-flex align-items-center d-lg-none mb-4" href="#">
+                            <img src="img/Logo.svg" alt="">
+                            <span class="ms-2" style="font-weight: 700; font-size: 40px;">PrimeCRM</span>
+                        </a>
+                        <a class="navbar-brand d-flex align-items-center d-none d-lg-flex" href="#">
+                            <img src="img/Logo.svg" alt="">
+                            <span class="ms-2" style="font-weight: 700; font-size: 40px;">PrimeCRM</span>
+                        </a>
+                        <article class="d-flex flex-row align-items-center gap-4">
+                            <a class="" href="#">
+                                <img src="img/Instagram.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/Facebook.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/Twiter.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/Linked in.svg" alt="">
+                            </a>
+                            <a class="" href="#">
+                                <img src="img/Youtube.svg" alt="">
+                            </a>
+                        </article>
+                    </article>
+                    <article class="mt-4 mb-2" style="width: 100%; height: 1px; background: #4a4a4a;">
+                    </article>
+                </article>
+
+                <article class="col-lg-2 col-md-4 col-sm-6">
+                    <h5 class="fs-5 fw-bold mt-2">Usefull Link</h5>
+                    <article class="mt-3 mb-4" style="width: 100%; height: 1px; background: #4a4a4a;"></article>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-white hover" href="#">Solution</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Industries</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Products</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Resources</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Pricing</a></li>
+                    </ul>
+                </article>
+
+                <article class="col-lg-2 col-md-4 col-sm-6">
+                    <h5 class="fs-5 fw-bold mt-2">Service</h5>
+                    <article class="mt-3 mb-4" style="width: 100%; height: 1px; background: #4a4a4a;"></article>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-white hover" href="#">Sale</a>
+                        </li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Marketing</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Real
+                                Estate</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Automotive</a></li>
+                        <li class="mb-3"><a class="text-white hover" href="#">Education</a></li>
+                    </ul>
+                </article>
+
+                <article class="col-lg-3 col-md-4 col-sm-6">
+                    <h5 class="fs-5 fw-bold mt-2">Contact Us</h5>
+                    <article class="mt-3 mb-4" style="width: 100%; height: 1px; background: #4a4a4a;"></article>
+                    <article class="d-flex flex-column align-items-end">
+                        <article class="border-end rounded-4 p-4 mb-4">
+                            <p class="">1700 W Blancke St, Kiyev</p>
+                            <p class="">Port South USA, American</p>
+                        </article>
+
+                        <article class="border-end rounded-4 p-4 mb-4">
+                            <p class="">+3265 456 789</p>
+                            <p class="">Mail@Primarily.Com</p>
+                        </article>
+                    </article>
+                </article>
+
+                <article class="col-lg-5 col-md-8 col-sm-6">
+                    <article class="d-flex justify-content-between align-items-center">
+                        <h5 class="fs-5 fw-bold mt-2">Our Latest News</h5>
+                        <img src="img/Page Button.svg" alt="">
+                    </article>
+                    <article class="mt-2 mb-4" style="width: 100%; height: 1px; background: #4a4a4a;"></article>
+                    <article class="mb-4" style="position: relative; width: 100%;">
+                        <img src="img/Image (6).png" style="width: 100%; height: auto; display: block;" alt="">
+                        <a class="btn px-4 py-2 fw-bold opacity-75"
+                            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; color: #313131;">Read
+                            Now</a>
+                    </article>
+                </article>
+
+                <article class="mt-2 mb-4" style="width: 100%; height: 1px; background: #4a4a4a;"></article>
+                <article class="col-lg-12 text-center">
+                    <p class="mb-4">
+                        Copyright © Primarily | Designed By VictorFlow Templates
+                    </p>
+                </article>
+            </article>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
